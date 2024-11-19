@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="calculadora.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Doto:wght@100..900&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap" rel="stylesheet">
+    <title>Calculadora</title>
+</head>
+<body>
+    <main id="calculator">
+        <section class="numbersInput">
+            <!-- secccón dedicada exclusivamente para el ingreso de los números. Debe tener cursor permanente, un título que explique su uso y una vez presionado el botón de la operación el número ingresado debe desaparecer. El estilo debe ser en un visor rectángular, de fondo preferentemente de poco contraste con la caja y letras con alto contraste. La etiqueta debe ser tipo form -->
+            <form>
+                <label for="calculator-input" class="form-title">Ingrese los números a calcular</label>
+                <input type="text" id="calculator-input" class="input-display" autofocus>
+            </form>
+        </section>
+
+        <section class="operations">
+            <!-- sección dedicada a diseñar los botones de operaciones matemáticas. La idea es que sean botones con contenido en símbolo pero con algún recurso para que el nombre de la operación se lea y destaque. La idea es empezar con las cuatro operaciones básicas, pero en un futuro poder algregar más, por lo que el diseño de la grilla podría ser en cruz, con un grid de 3x3 con casillas vacías y una dcuarta fila con el "=". -->
+            <div class="grid-container" id="buttons-container">
+                <!-- Botones con símbolo y nombre de operación -->
+                <button class="operation-button" id="add">+</button>
+                <button class="operation-button" id="subtract">-</button>
+                <button class="operation-button" id="multiply">*</button>
+                <button class="operation-button" id="divide">/</button>
+                <button class="operation-button" disabled></button> <!-- Espacio vacío -->
+                <button class="operation-button" disabled></button>
+                <button class="operation-button" disabled></button>
+                <button class="operation-button" disabled></button>
+                <button class="operation-button" id="equals">=</button>
+            </div>
+        </section>
+        <section class="mathLog">
+            <!-- esta sección es un cuadro donde se imprima el historial de operaciones, en un form autoajustable, posiblemente con un height máximo con scroll, y botones de borrar el último número ingresado y de limpiar el historial -->
+            <div class="log-box" id="log-box">
+                <!-- Aquí se imprimirán las operaciones -->
+            </div>
+            <div class="log-buttons">
+                <button class="log-button" id="delete-last">Borrar último</button>
+                <button class="log-button" id="clear-log">Limpiar historial</button>
+                <button id="m1" onclick="pasteLastResult()">M1</button>
+
+            </div>
+        </section>
+    </main>
+    
+
+    <script src="calculadora.js"></script>
+</body>
+</html>
